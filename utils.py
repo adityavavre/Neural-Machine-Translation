@@ -33,9 +33,8 @@ def pad_sents(sents, pad_token):
     sents_padded = []
 
     ### YOUR CODE HERE (~6 Lines)
-
-
-
+    max_len = max(list(map(lambda x: len(x), sents)))
+    sents_padded = list(map(lambda x: x + [pad_token for i in range(max_len-len(x))], sents))
     ### END YOUR CODE
 
     return sents_padded
